@@ -1,0 +1,15 @@
+{
+    
+        "sections": {
+            "topMenu": {"type": "topMenu"},
+            "mainMenu": {"type": "mainMenu"},
+            "bottomMenu": {"type": "bottomMenu"},
+            "hero": {"type": "hero"},
+        },
+        "order": [
+            "topMenu",
+            "mainMenu",
+            "bottomMenu",
+            "hero"
+        ]
+}

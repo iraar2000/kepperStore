@@ -1,0 +1,126 @@
+.top-menu-container {
+    justify-content: center ;
+    width: 100%;
+    height: fit-content;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.gray-title-tag { background-color: var(--gray-color); }
+
+.main-menu-container {
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--primary-color);
+    padding: 5px 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    padding:  5px 24px;
+}
+
+.menu-support-contact-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-support-contact-container p {
+    font-size: 12px;
+    color: var(--secondary-color);
+}
+
+.menu-settings-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px
+}
+
+.logo .image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--accent-color);
+}
+
+.logo .name p{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.navigator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.menu-item-container a {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+}
+
+.menu-item-container a .menu-item {
+    padding: 10px 20px;
+}
+
+.menu-item-container a .menu-item:hover {
+    text-decoration: none;
+    color: var(--accent-color);
+    outline: none;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+}
+
+.page-navs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+a:hover .icon-holder .icon-container {
+    background-color: var(--accent-color);
+    opacity: 0.5;
+    color: var(--primary-color);
+}
+
+.nav-container a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+a .nav-description .header{
+    color: var(--darkgray-color);
+    font-size: var(--font-size-small);
+}
+
+a .nav-description .main{
+    color: var(--secondary-color);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+}

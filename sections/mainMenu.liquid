@@ -1,0 +1,100 @@
+{% schema %}
+{
+  "name": "main menu",
+  "settings": [
+    {
+      "type": "text",
+      "id": "menu_list",
+      "label": "list_menu",
+      "default": "Home,Products,Contacts"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="main-menu-container">
+  <div class="container">
+    {% comment %} menu navigator container box {% endcomment %}
+    <div class="navigator">
+      <div class="logo">
+        <div class="image"></div>
+        <div class="name">
+          <p>{{ settings.store_name }}</p>
+          <p>TECH STORE</p>
+        </div>
+      </div>
+      <div class="menu-navigator-container">
+        <nav class="menu-navigator">
+          <ul class="menu-list">
+            {% assign menu_list = section.settings.menu_list | split: ',' %}
+            {% for menu in menu_list %}
+              <li class="menu-item-container">
+                <a
+                  href="
+                    {% if menu == "home" %} /
+                    {% elsif menu == "products" %} /pages/products
+                    {% elsif menu == "contact" %} /pages/contact
+                    {% else %} /
+                    {% endif %}
+                  "
+                >
+                  <div class="menu-item">{{ menu | upcase }}</div>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="spacer"></div>
+
+    {% comment %} pages navigator section {% endcomment %}
+    <div class="page-navs">
+      {% comment %} favorite button {% endcomment %}
+      <div class="nav-container">
+        <a href="/pages/favorites">
+          <div class="icon-holder">
+            <div class="icon-container">
+              <div class="fav-icon">{% render 'favorite-icon' %}</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      {% comment %} account page setting {% endcomment %}
+      <div class="nav-container">
+        <a href="/pages/accounts">
+          <div class="icon-holder">
+            <div class="icon-container">
+              {% render 'user-icon' %}
+            </div>
+          </div>
+          <div class="nav-description">
+            <p class="header">WELCOME</p>
+            <p class="main">LOGIN/REGISTER</p>
+          </div>
+        </a>
+      </div>
+
+      {% comment %} cart navigatior {% endcomment %}
+      <div class="nav-container">
+        <a href="/pages/cart">
+          <div class="icon-holder">
+            <div class="icon-container">
+              {% render 'cart-icon' %}
+            </div>
+            <div class="notification-tag">5</div>
+          </div>
+          <div class="nav-description">
+            <p class="header">CART</p>
+            <p class="main">RW100,00</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  localStorage.setItem('menuNavigation', '{{ section.settings.menu_list }}');
+</script>

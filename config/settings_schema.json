@@ -1,0 +1,67 @@
+[
+    {
+        "name": "cool store",
+        "settings": [
+            {
+                "type": "text",
+                "id": "store_name",
+                "label": "Store Name",
+                "default": "Cool Store"
+            },
+            {
+                "type": "textarea",
+                "id": "store_description",
+                "label": "Store Description",
+                "default": "Welcome to Cool Store! We offer the coolest products around."
+            },
+            {
+                "type": "image_picker",
+                "id": "store_logo",
+                "label": "Store Logo",
+            },
+            {
+                "type": "text",
+                "id": "hotline_nbr",
+                "label": "Hotline Phn Nbr",
+                "default": "+250 784 083 736"
+            },
+            {
+                "type": "color",
+                "id": "primary_color",
+                "label": "Primary Color",
+                "default": "#FFFFFF"
+            },
+            {
+                 "type": "color",
+                 "id": "background_color",
+                 "label": "Background Color",
+                 "default": "#F4F4F4"
+            },
+            {
+                "type": "color",
+                "id": "secondary_color",
+                "label": "Secondary Color",
+                "default": "#FFFFFF"
+            },
+            {
+                "type": "color",
+                "id": "accent_color",
+                "label": "Accent Color",
+                "default": "#01A49E"
+            },
+            {
+                "type": "color",
+                "id": "gray_color",
+                "label": "Gray Color",
+                "default": "#EBEEF6"
+            },
+            {
+                "type": "color",
+                "id": "darkgray_color",
+                "label": "DarkGray Color",
+                "default": "#666666"
+            }
+
+        ]
+    }
+]

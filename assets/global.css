@@ -1,0 +1,113 @@
+.tag {
+    color: var(--secondary-color);
+    padding: 5px 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag:hover {
+    background-color: rgba(1, 164, 158, 0.5);
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag-announcer {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.tag-promotional {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.tag p {
+    font-size: 12px;
+    font-weight: var(--font-weight-medium);
+    margin: 0;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.dropdown-setting {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-setting-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    min-width: 140px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    z-index: 10;
+    padding: 8px 0;
+}
+.dropdown-setting.active .dropdown-setting-content {
+    display: block; 
+}
+.dropdown-setting-title .dropdown-setting-icon {
+    display: block;
+}
+.dropdown-setting-title .up-arrow-icon {
+    display: none;
+}
+.dropdown-setting.active .dropdown-setting-title .dropdown-setting-icon {
+    display: none;
+}
+.dropdown-setting.active .dropdown-setting-title .up-arrow-icon {
+    display: block;
+}
+.dropdown-setting-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-size: var(--font-size-small);
+    transition: background 0.2s;
+}
+.dropdown-setting-item:hover {
+    background: var(--accent1-color, #f0f0f0);
+    font-size: var(--font-size-small);
+}
+
+.icon-container {
+    padding: 10px;
+    background-color: var(--gray-color);
+    color: var(--secondary-color);
+    border-radius: 100%;
+}
+
+.icon-holder {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+.icon-holder .notification-tag {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    height: 15px;
+    width: 15px;
+    background-color: var(--accent-color);
+    border-radius: 100%;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+}
+

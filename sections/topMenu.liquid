@@ -1,0 +1,84 @@
+<div class="top-menu-container">
+  <div class="container">
+    {% comment %} Support contact information {% endcomment %}
+    <div class="menu-support-contact-container">
+      <div class="tag gray-title-tag">
+        <p>Hotline 24/7</p>
+      </div>
+      <p style="font-weight: var(--font-weight-bold);">{{ settings.hotline_nbr }}</p>
+    </div>
+    <div class="spacer"></div>
+    {% comment %} Settings information {% endcomment %}
+    <div class="menu-settings-container">
+      <div class="tag">
+        <p>Sell on Kepper</p>
+      </div>
+
+      {% comment %} currency drop down {% endcomment %}
+      <div class="dropdown-setting">
+        <div class="tag dropdown-setting-title gray-title-tag">
+          <p style="margin:0;">currency</p>
+          <span class="dropdown-setting-icon">
+            {% render 'down-icon', width: 11, height: 11 %}
+          </span>
+          <span class="up-arrow-icon">
+            {% render 'up-icon', width: 11, height: 11 %}
+          </span>
+        </div>
+        <div class="dropdown-setting-content">
+          {% comment %} Hidden select element for form submission {% endcomment %}
+          <div class="form-container" style="display:none;">
+            {% form 'localization' %}
+              <select name="currency_code" class="setting-select">
+                {% for item in localization.available_countries %}
+                  <option value="{{ item.iso_code }}">{{ item.iso_code | upcase }}</option>
+                {% endfor %}
+              </select>
+            {% endform %}
+          </div>
+
+          {% comment %} custom selection items {% endcomment %}
+          {% assign size = localization.available_countries.size | minus: 1 %}
+          {% for i in (0..size) %}
+            <div class="dropdown-setting-item" data-value="{{ localization.available_countries[i].iso_code }}">
+              {{ localization.available_countries[i].iso_code | upcase }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% comment %} langauge dropdown box {% endcomment %}
+      <div class="dropdown-setting">
+        <div class="tag dropdown-setting-title gray-title-tag ">
+          <p style="margin:0;">language</p>
+          <span class="dropdown-setting-icon">
+            {% render 'down-icon', width: 11, height: 11 %}
+          </span>
+          <span class="up-arrow-icon">
+            {% render 'up-icon', width: 11, height: 11 %}
+          </span>
+        </div>
+        <div class="dropdown-setting-content">
+          {% comment %} Hidden select element for form submission {% endcomment %}
+          <div class="form-container" style="display:none; ">
+            {% form 'localization' %}
+              <select name="language_code" class="setting-select">
+                {% for item in localization.available_languages %}
+                  <option value="{{ item.iso_code }}">{{ item.iso_code | upcase }}</option>
+                {% endfor %}
+              </select>
+            {% endform %}
+          </div>
+
+          {% comment %} custom selection items {% endcomment %}
+          {% assign size = localization.available_languages.size | minus: 1 %}
+          {% for i in (0..size) %}
+            <div class="dropdown-setting-item" data-value="{{ localization.available_languages[i].iso_code }}">
+              {{ localization.available_languages[i].iso_code }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<style>
+  {% comment %} color variables {% endcomment %}
+  :root {
+    --primary-color: {{ settings.primary_color }};
+    --background-color: {{ settings.background_color }};
+    --secondary-color: {{ settings.secondary_color }};
+    --accent-color: {{ settings.accent_color }};
+    --gray-color: {{ settings.gray_color }};
+    --darkgray-color: {{ settings.darkgray_color }};
+  }
+  {% comment %} font size and weight variables {% endcomment %}
+  :root {
+    --font-size-small: 12px;
+    --font-size-medium: 14px;
+    --font-size-large: 16px;
+    --font-size-xlarge: 20px;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+  }
+</style>
+
+<html>
+  <head>
+    {% comment %} including global styles and scripts  {% endcomment %}
+    {{ content_for_header }}
+    <!-- Add this to your HTML head if needed -->
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'global.css' | asset_url | stylesheet_tag }}
+    {{ 'menu.css' | asset_url | stylesheet_tag }}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    {{ content_for_layout }}
+    {% comment %} menu script inclusion {% endcomment %}
+    {{ 'menu.js' | asset_url | script_tag }}
+    {{ 'setting_dropdown.js' | asset_url | script_tag }}
+  </body>
+</html>
