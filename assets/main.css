@@ -1,0 +1,6 @@
+@import "./reset.css";
+@import "./global.css";
+@import "./component-buttons.css";
+@import "./component-dropdown.css";
+@import "./component-wishlist.css";
+@import "./layout-menu.css"

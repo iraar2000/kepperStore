@@ -2,83 +2,33 @@
   <div class="container">
     {% comment %} Support contact information {% endcomment %}
     <div class="menu-support-contact-container">
-      <div class="tag gray-title-tag">
-        <p>Hotline 24/7</p>
-      </div>
+      <div class="btn btn-secondary btn-sm">Hotline 24/7</div>
       <p style="font-weight: var(--font-weight-bold);">{{ settings.hotline_nbr }}</p>
     </div>
     <div class="spacer"></div>
     {% comment %} Settings information {% endcomment %}
     <div class="menu-settings-container">
-      <div class="tag">
-        <p>Sell on Kepper</p>
-      </div>
-
+      <div class="btn btn-secondary btn-sm">Sell on Kepper</div>
       {% comment %} currency drop down {% endcomment %}
-      <div class="dropdown-setting">
-        <div class="tag dropdown-setting-title gray-title-tag">
-          <p style="margin:0;">currency</p>
-          <span class="dropdown-setting-icon">
-            {% render 'down-icon', width: 11, height: 11 %}
-          </span>
-          <span class="up-arrow-icon">
-            {% render 'up-icon', width: 11, height: 11 %}
-          </span>
-        </div>
-        <div class="dropdown-setting-content">
-          {% comment %} Hidden select element for form submission {% endcomment %}
-          <div class="form-container" style="display:none;">
-            {% form 'localization' %}
-              <select name="currency_code" class="setting-select">
-                {% for item in localization.available_countries %}
-                  <option value="{{ item.iso_code }}">{{ item.iso_code | upcase }}</option>
-                {% endfor %}
-              </select>
-            {% endform %}
-          </div>
-
-          {% comment %} custom selection items {% endcomment %}
-          {% assign size = localization.available_countries.size | minus: 1 %}
-          {% for i in (0..size) %}
-            <div class="dropdown-setting-item" data-value="{{ localization.available_countries[i].iso_code }}">
-              {{ localization.available_countries[i].iso_code | upcase }}
-            </div>
-          {% endfor %}
-        </div>
-      </div>
+      {% assign currency_items = localization.available_countries | map: 'currency' %}
+      {% assign currency_items = currency_items | map: 'iso_code' | uniq %}
+      {% render 'dropdown',
+        title: 'currency',
+        size: 'sm',
+        form_type: 'localization',
+        name_code: 'currency_code',
+        items: currency_items
+      %}
 
       {% comment %} langauge dropdown box {% endcomment %}
-      <div class="dropdown-setting">
-        <div class="tag dropdown-setting-title gray-title-tag ">
-          <p style="margin:0;">language</p>
-          <span class="dropdown-setting-icon">
-            {% render 'down-icon', width: 11, height: 11 %}
-          </span>
-          <span class="up-arrow-icon">
-            {% render 'up-icon', width: 11, height: 11 %}
-          </span>
-        </div>
-        <div class="dropdown-setting-content">
-          {% comment %} Hidden select element for form submission {% endcomment %}
-          <div class="form-container" style="display:none; ">
-            {% form 'localization' %}
-              <select name="language_code" class="setting-select">
-                {% for item in localization.available_languages %}
-                  <option value="{{ item.iso_code }}">{{ item.iso_code | upcase }}</option>
-                {% endfor %}
-              </select>
-            {% endform %}
-          </div>
-
-          {% comment %} custom selection items {% endcomment %}
-          {% assign size = localization.available_languages.size | minus: 1 %}
-          {% for i in (0..size) %}
-            <div class="dropdown-setting-item" data-value="{{ localization.available_languages[i].iso_code }}">
-              {{ localization.available_languages[i].iso_code }}
-            </div>
-          {% endfor %}
-        </div>
-      </div>
+      {% assign laguage_items = localization.available_languages | map: 'iso_code' %}
+      {% render 'dropdown',
+        title: 'language',
+        size: 'sm',
+        form_type: 'localization',
+        name_code: 'language_code',
+        items: laguage_items
+      %}
     </div>
   </div>
 </div>

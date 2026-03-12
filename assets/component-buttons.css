@@ -1,0 +1,40 @@
+.btn {
+    color: var(--secondary-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgba(1, 164, 158, 0.5);
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: var(--gray-color);
+    color: var(--secondary-color);
+}
+
+
+.btn-active {
+    background-color: rgba(1, 164, 158, 0.5);
+    color: var(--primary-color);
+}
+
+.btn-sm {
+    padding: 5px 8px;
+    font-size: var(--font-size-small);
+}
+
+.btn-md {
+    padding: 5px 8px;
+    font-size: var(--font-size-small);
+}

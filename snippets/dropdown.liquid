@@ -1,0 +1,33 @@
+<div data-name="{{ title }}" class="dropdown">
+  <div class="dropdown-title btn btn-secondary btn-{{ size }}">
+    <p style="margin:0;">{{ title }}</p>
+    <span class="dropdown-icon">
+      {% render 'down-icon', width: 11, height: 11 %}
+    </span>
+    <span class="up-arrow-icon">
+      {% render 'up-icon', width: 11, height: 11 %}
+    </span>
+  </div>
+
+  <div class="dropdown-content">
+    {% comment %} Hidden select element for form submission {% endcomment %}
+    <div class="dropdown-form-container" style="display:none;">
+      {% if form_type %}
+        {% form form_type %}
+          <select name="{{ name_code }}" class="setting-select">
+            {% for item in items %}
+              <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+          </select>
+        {% endform %}
+      {% endif %}
+    </div>
+
+    {% comment %} custom selection items {% endcomment %}
+    {% for item in items %}
+      <div class="dropdown-item" data-value="{{ item }}">
+        {{ item }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

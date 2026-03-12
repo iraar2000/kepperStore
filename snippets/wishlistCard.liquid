@@ -1,0 +1,20 @@
+<div class="wishlist-container {% if request.path contains path %} active {% endif %}">
+  <a href="{{ path }}">
+    <div class="wishlist-iconContainer">
+      {% if icon %}
+        <div class="wishlist-icon">
+          {{ icon }}
+        </div>
+      {% endif %}
+      {% if popup_info %}
+        <div class="wishlist-popup">{{ popup_info }}</div>
+      {% endif %}
+    </div>
+    {% if description and description_ttl %}
+      <div class="wishlist-description">
+        <p class="header">{{ description_ttl }}</p>
+        <p class="main">{{ description }}</p>
+      </div>
+    {% endif %}
+  </a>
+</div>

@@ -1,20 +1,14 @@
+/* top menu section css design */
 .top-menu-container {
     justify-content: center ;
     width: 100%;
     height: fit-content;
     color: var(--secondary-color);
     background-color: var(--primary-color);
+    border-bottom: 1px solid var(--gray-color);
 }
 
 .gray-title-tag { background-color: var(--gray-color); }
-
-.main-menu-container {
-    justify-content: center;
-    width: 100%;
-    height: fit-content;
-    background-color: var(--primary-color);
-    padding: 5px 0;
-}
 
 .container {
     display: flex;
@@ -41,6 +35,15 @@
     flex-direction: row;
     align-items: center;
     gap: 8px;
+}
+
+/* main menu section css design */
+.main-menu-container {
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--primary-color);
+    padding: 5px 0;
 }
 
 .logo {
@@ -94,6 +97,10 @@
     font-weight: var(--font-weight-bold);
 }
 
+.menu-list .menu-item-container.active a .menu-item{
+    color: var(--accent-color);
+}
+
 .page-navs {
     display: flex;
     flex-direction: row;
@@ -101,26 +108,71 @@
     gap: 8px;
 }
 
-a:hover .icon-holder .icon-container {
+/* bottom menu section css design */
+.bottom-menu-container {
     background-color: var(--accent-color);
-    opacity: 0.5;
-    color: var(--primary-color);
+    padding: 5px 0;
 }
 
-.nav-container a {
+.searchBox {
+    height: 35px;
+    width: 600px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 8px;
+    background-color: var(--primary-color);
+    padding: 0 10px;
+    border-radius: 10px;
 }
 
-a .nav-description .header{
-    color: var(--darkgray-color);
+.searchBox .category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    font-size: var(--font-size-small);
+    font-weight: bold;
+}
+
+.searchBox .category:hover {
+    cursor: pointer;
+}
+
+.searchBox .category .category-dropdown-icon {
+    height: 5px;
+    width: 8px;
+    border-radius: 10px;
+    background-color: transparent;
+    justify-items: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.searchBox .searchInput .category-dropdown-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+    height: 13px;
+    width: 13px;
+}
+
+.searchBox .searchInput {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
     font-size: var(--font-size-small);
 }
 
-a .nav-description .main{
-    color: var(--secondary-color);
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-bold);
+.searchBox .searchInput input {
+    all: unset;
+    height: 100%;
+    flex: 1;
+    background-color: inherit;
+    margin: 0 0 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
