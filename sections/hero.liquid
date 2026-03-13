@@ -1,0 +1,33 @@
+<div class="body-container">
+  <div class="hero-section">
+    {% comment %} category title {% endcomment %}
+    <div class="categoryList-container">
+      <div class="title">
+        <p>Category</p>
+      </div>
+
+      {% comment %} category items section {% endcomment %}
+      <div class="category-content"></div>
+    </div>
+    <div class="banner-container">
+      <img class="banner-image" alt="image" src="{{ "banner-image.jpg" | asset_url }}">
+      <div class="banner-content">
+        <p class="description">Welcome to Kepper store</p>
+        <p class="sub-description">We hope you enjoy shoping to our site.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner image"
+    }
+  ]
+}
+{% endschema %}

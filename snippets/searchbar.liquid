@@ -1,0 +1,9 @@
+<div class="searchbar">
+  {% render 'dropdown', title: 'categories', size: 'md', items: categories %}
+  <div class="searchbar-input">
+    <input placeholder="{{ anounce_text }}">
+  </div>
+  <button class="btn btn-secondary btn-sm search-button">
+    {% render 'search-icon', width: 11, height: 11 %}
+  </button>
+</div>

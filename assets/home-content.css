@@ -1,0 +1,126 @@
+/* the home body design */
+.body-container {
+  background-color: transparent;
+  height: 400px;
+  width: 100%;
+  margin-top: 8px;
+  padding: 0 12px;
+}
+
+.body-container .hero-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.hero-section .categoryList-container {
+  height: 100%;
+  width: 350px;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 0 30px 30px 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.categoryList-container .title {
+  padding: 15px 0;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.categoryList-container .title p {
+  font-weight: var(--font-weight-bold);
+  font-size: 24px;
+  font-family: "Quicksand";
+}
+
+.category-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-content .category-item {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 18px;
+  gap: 12px;
+  align-items: center;
+}
+
+.category-content .category-item p {
+  flex: 1;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-bold);
+}
+
+.category-content .category-item .category-quantity {
+  background-color: var(--accent-color);
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-item .category-quantity p {
+  all: unset;
+  font-size: var(--font-size-small);
+}
+
+.hero-section .banner-container {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.banner-container .banner-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 30px;
+  padding: 0 77px;
+}
+
+.banner-content .description {
+  font-family: "Quicksand";
+  font-size: 50px;
+  width: 679.96px;
+  text-wrap: 2;
+  font-weight: var(--font-weight-bold);
+  line-height: 50px;
+}
+
+.banner-content .sub-description {
+  font-family: "Quicksand";
+  font-size: var(--font-size-large);
+  color: var(--gray-color);
+}
+
+/* the home body content layout design */
+.home-page {
+  height: 100px;
+  width: 100%;
+  background-color: brown;
+}

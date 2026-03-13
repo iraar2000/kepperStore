@@ -1,15 +1,18 @@
 {
-    
-        "sections": {
-            "topMenu": {"type": "topMenu"},
-            "mainMenu": {"type": "mainMenu"},
-            "bottomMenu": {"type": "bottomMenu"},
-            "hero": {"type": "hero"},
+    "sections": {
+        "topMenu": {
+            "type": "topMenu"
         },
-        "order": [
-            "topMenu",
-            "mainMenu",
-            "bottomMenu",
-            "hero"
-        ]
+        "mainMenu": {
+            "type": "mainMenu"
+        },
+        "bottomMenu": {
+            "type": "bottomMenu"
+        }
+    },
+    "order": [
+        "topMenu",
+        "mainMenu",
+        "bottomMenu"
+    ]
 }

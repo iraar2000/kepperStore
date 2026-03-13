@@ -1,16 +1,11 @@
-<div class="bottom-menu-container">
+<div class="bottomMenu-container">
   <div class="container">
-    <div class="searchBox">
-      {% assign categories = 'All categories,iPhone,Samsung,Xiamo' | split: ',' %}
-      {% render 'dropdown', title: 'categories', size: 'md', items: categories %}
-      <div class="searchInput">
-        <input placeholder="search anything...">
-        <span class="icon-container search-icon">
-          {% render 'search-icon' %}
-        </span>
-      </div>
+    {% assign categories = 'All categories,iPhone,Samsung,Xiamo' | split: ',' %}
+    {% render 'searchbar', categories: categories, anounce_text: 'search anything...' %}
+    <div class="services">
+      <div class="btn-text">free delivery</div>
+      <div class="btn-text">30days money back</div>
+      <div class="btn-text">100% secure payment</div>
     </div>
-    <div class="spacer"></div>
-    <div class="offer-navigator"></div>
   </div>
 </div>

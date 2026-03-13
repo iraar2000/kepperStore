@@ -1,64 +1,67 @@
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 .dropdown .dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 110%;
-    min-width: 140px;
-    background-color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-    border-radius: 8px;
-    z-index: 10;
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  left: auto;
+  top: 130%;
+  min-width: 140px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  z-index: 10;
 }
 
 .dropdown .dropdown-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-} 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
 
 .dropdown.active .dropdown-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    background-color: rgba(1, 164, 158, 0.5);
-    color: var(--primary-color);
-} 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(1, 164, 158, 0.5);
+  color: var(--primary-color);
+}
 
 .dropdown.active .dropdown-content {
-    display: block; 
+  visibility: visible;
 }
 
 .dropdown-title .dropdown-icon {
-    display: block;
+  display: block;
 }
 
 .dropdown-title .up-arrow-icon {
-    display: none;
+  display: none;
 }
 
 .dropdown.active .dropdown-title .dropdown-icon {
-    display: none;
+  display: none;
 }
 
 .dropdown.active .dropdown-title .up-arrow-icon {
-    display: block;
+  display: block;
 }
 
 .dropdown-item {
-    padding: 8px 16px;
-    cursor: pointer;
-    color: var(--secondary-color);
-    font-size: var(--font-size-small);
-    transition: background 0.2s;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-size: var(--font-size-small);
+  transition: background 0.2s;
+  border-radius: 8px;
 }
 
 .dropdown-item:hover {
-    background: var(--accent1-color, #f0f0f0);
-    font-size: var(--font-size-small);
+  background: var(--accent1-color, #f0f0f0);
+  font-size: var(--font-size-small);
+  border-radius: 8px;
 }

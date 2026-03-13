@@ -32,16 +32,16 @@
                 "default": "#FFFFFF"
             },
             {
-                 "type": "color",
-                 "id": "background_color",
-                 "label": "Background Color",
-                 "default": "#F4F4F4"
+                "type": "color",
+                "id": "background_color",
+                "label": "Background Color",
+                "default": "#F4F4F4"
             },
             {
                 "type": "color",
                 "id": "secondary_color",
                 "label": "Secondary Color",
-                "default": "#FFFFFF"
+                "default": "#000000"
             },
             {
                 "type": "color",
@@ -61,7 +61,6 @@
                 "label": "DarkGray Color",
                 "default": "#666666"
             }
-
         ]
     }
 ]
