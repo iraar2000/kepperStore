@@ -12,8 +12,8 @@
   :root {
     --font-size-small: 12px;
     --font-size-medium: 13px;
-    --font-size-large: 14px;
-    --font-size-xlarge: 16px;
+    --font-size-large: 16px;
+    --font-size-xlarge: 18px;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
@@ -41,12 +41,21 @@
     {{ content_for_layout }}
     {% comment %} menu script inclusion {% endcomment %}
     <script>
+      {% comment %} icon variable {% endcomment %}
       const icons = {
         cameras: "{{ 'camera-icon.svg' | asset_url }}",
         'shoes & clothes': "{{ 'shoesclothes-icon.svg' | asset_url }}",
         'laptop & pc': "{{ 'pc-icon.svg' | asset_url }}",
         'phones & tablets': "{{ 'tablet-icon.svg' | asset_url }}",
         rentals: "{{ 'rental-icon.svg' | asset_url }}",
+      };
+
+      {% comment %} account variable {% endcomment %}
+      const accounts = {
+        whatsapp: '{{ settings.whatsapp_account }}',
+        youtube: '{{ settings.youtube_account }}',
+        facebook: '{{ settings.facebook_account }}',
+        instagram: '{{ settings.instagram_account }}',
       };
     </script>
     <script type="module" src="{{ 'main.js' | asset_url }}"></script>

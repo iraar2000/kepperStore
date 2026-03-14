@@ -10,6 +10,7 @@ searchEventHandler();
 dropDownButtonEventHandler();
 productCategoryInitializer(collections.collections);
 productCategoryEventHandler();
+socialMediaBtnHandler();
 
 // search category fetching and insertion to the category content
 async function searchEventHandler() {
@@ -77,3 +78,18 @@ function productCategoryEventHandler() {
         })
     })
 };
+
+// the social media button handling function
+function socialMediaBtnHandler() {
+    const socialBtns = document.querySelectorAll('.socialmedia-btn');
+    socialBtns.forEach(socialBtn => {
+        socialBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const name = socialBtn.dataset.name;
+            if (name.toLowerCase() == 'whatsapp') window.location.href = 'https://wa.me/' + accounts[name];
+            else if (name.toLowerCase() == 'facebook') window.location.href = 'https://www.facebook.com/' + accounts[name];
+            else if (name.toLowerCase() == 'instagram') window.location.href = 'https://www.intagram.com/' + accounts[name];
+            else if (name.toLowerCase() == 'youtube') window.location.href = 'https://www.youtube.com/@' + accounts[name];
+        })
+    })
+}

@@ -1,10 +1,10 @@
 /* the home body design */
 .body-container {
   background-color: transparent;
-  height: 400px;
   width: 100%;
   margin-top: 8px;
   padding: 0 12px;
+  overflow: hidden;
 }
 
 .body-container .hero-section {
@@ -12,7 +12,7 @@
   flex-direction: row;
   align-items: center;
   gap: 8px;
-  height: 100%;
+  height: 400px;
 }
 
 .hero-section .categoryList-container {

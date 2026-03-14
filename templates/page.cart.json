@@ -8,11 +8,15 @@
         },
         "bottomMenu": {
             "type": "bottomMenu"
+        },
+        "footer": {
+            "type": "footer"
         }
     },
     "order": [
         "topMenu",
         "mainMenu",
-        "bottomMenu"
+        "bottomMenu",
+        "footer"
     ]
 }

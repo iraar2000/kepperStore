@@ -9,7 +9,8 @@
 @import "./component-searchbar.css";
 
 /* layout css */
-@import "./layout-menu.css";
+@import "./menu-layout.css";
+@import "./footer-layout.css";
 
 /* content css */
 @import "./home-content.css";

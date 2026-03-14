@@ -12,8 +12,11 @@
         "hero": {
             "type": "hero"
         },
-        "home-layout": {
+        "home": {
             "type": "homeLayout"
+        },
+        "footer": {
+            "type": "footer"
         }
     },
     "order": [
@@ -21,6 +24,7 @@
         "mainMenu",
         "bottomMenu",
         "hero",
-        "home-layout",
+        "home",
+        "footer"
     ]
 }

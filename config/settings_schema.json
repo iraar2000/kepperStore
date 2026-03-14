@@ -20,6 +20,30 @@
                 "label": "Store Logo",
             },
             {
+                "type": "textarea",
+                "id": "whatsapp_account",
+                "label": "whatsapp account",
+                "default": "number"
+            },
+            {
+                "type": "textarea",
+                "id": "facebook_account",
+                "label": "facebook account",
+                "default": "AccountName"
+            },
+            {
+                "type": "textarea",
+                "id": "youtube_account",
+                "label": "youtube account",
+                "default": "@ChannelName"
+            },
+            {
+                "type": "textarea",
+                "id": "instagram_account",
+                "label": "instagram account",
+                "default": "AccountName"
+            },
+            {
                 "type": "text",
                 "id": "hotline_nbr",
                 "label": "Hotline Phn Nbr",

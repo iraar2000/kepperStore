@@ -51,12 +51,24 @@
 }
 
 .btn-shadow {
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.07);
   border-radius: 5px;
   border: 1px solid var(--gray-color);
 }
 
 .btn-shadow:hover {
-  box-shadow: 0 0 20px rgba(1, 164, 158, 0.5);
+  box-shadow: 0 0 5px rgba(1, 164, 158, 0.5);
   cursor: pointer;
+}
+
+.socialmedia-btn {
+  border: 0;
+  outline: none;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
