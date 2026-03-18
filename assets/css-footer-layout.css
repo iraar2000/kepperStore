@@ -43,7 +43,7 @@
 .store-presentation .store-title,
 .navigator-container .navigator-title {
   color: var(--secondary-color);
-  font-size: var(--font-size-xlarge);
+  font-size: var(--font-size-medium);
   font-weight: var(--font-weight-bold);
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -135,7 +135,7 @@
 
 .navigator-container .navigator-list a {
   color: var(--darkgray-color);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-small);
 }
 
 .navigator-container .navigator-list a:hover {

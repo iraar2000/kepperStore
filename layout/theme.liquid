@@ -25,7 +25,7 @@
     {% comment %} including global styles and scripts  {% endcomment %}
     {{ content_for_header }}
     <!-- Add this to your HTML head if needed -->
-    {{ 'main.css' | asset_url | stylesheet_tag }}
+    {{ 'css-main.css' | asset_url | stylesheet_tag }}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -39,16 +39,32 @@
   </head>
   <body>
     {{ content_for_layout }}
-    {% comment %} menu script inclusion {% endcomment %}
+
+    {% comment %} category item template {% endcomment %}
+    {% render 'subcateg-item' %}
+
+    {% comment %} display container template {% endcomment %}
+    {% render 'display-container' %}
+
+    {% comment %} group container template {% endcomment %}
+    {% render 'group-container' %}
+
+    {% comment %} product item template {% endcomment %}
+
     <script>
       {% comment %} icon variable {% endcomment %}
       const icons = {
-        cameras: "{{ 'camera-icon.svg' | asset_url }}",
-        'shoes & clothes': "{{ 'shoesclothes-icon.svg' | asset_url }}",
-        'laptop & pc': "{{ 'pc-icon.svg' | asset_url }}",
-        'phones & tablets': "{{ 'tablet-icon.svg' | asset_url }}",
-        rentals: "{{ 'rental-icon.svg' | asset_url }}",
+        camera: "{{ 'image-camera-icon.svg' | asset_url }}",
+        'shoes-clothes': "{{ 'image-shoesclothes-icon.svg' | asset_url }}",
+        'laptop-pc': "{{ 'image-pc-icon.svg' | asset_url }}",
+        'phones-tables': "{{ 'image-tablet-icon.svg' | asset_url }}",
+        rentals: "{{ 'image-rental-icon.svg' | asset_url }}",
       };
+
+      {% comment %} images to use variable is defined {% endcomment %}
+      const useImage = {
+        "add-image": "{{ 'image-addPicture.png' | asset_url }}"
+      }
 
       {% comment %} account variable {% endcomment %}
       const accounts = {
@@ -57,7 +73,53 @@
         facebook: '{{ settings.facebook_account }}',
         instagram: '{{ settings.instagram_account }}',
       };
+
+      {% comment %} the function retrieves the collections stored in shopify and their data {% endcomment %}
+      function getCollectionsJson() {
+
+        const collectionsData = [
+          {% for coll in collections %}
+            {
+              id: {{ coll.id }},
+              title: "{{ coll.title | escape }}",
+              handle: "{{ coll.handle | escape }}",
+              type: "{{ coll.metafields.custom.collection_type | escape }}",
+              products_count: {{ coll.products_count }},
+              image: {
+                  id: {{ coll.image.id }},
+                  asp: {{ coll.image.aspect_ratio }},
+                  src: "{{ coll.image | image_url: width: 300}}"
+              },
+              parent: {% if coll.metafields.custom.parent.value %}
+                {
+                  id: {{ coll.metafields.custom.parent.value.id }},
+                  title: "{{ coll.metafields.custom.parent.value.title }}",
+                  handle: "{{ coll.metafields.custom.parent.value.handle }}"
+                }
+              {% else %}
+                null
+              {% endif %},
+              subcategories: {% if coll.metafields.custom.sub_collections.value %}
+                [
+                {% for sub_coll in coll.metafields.custom.sub_collections.value %}
+                  {
+                    id: {{ sub_coll.id }},
+                    title: "{{ sub_coll.title }}",
+                    handle: "{{ sub_coll.handle }}"
+                  }{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+                ]
+              {% else %}
+                []
+              {% endif %}
+            }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ];
+        return collectionsData;
+      }
     </script>
-    <script type="module" src="{{ 'main.js' | asset_url }}"></script>
+    {{ 'script-definitions.js' | asset_url | script_tag }}
+    <script type="module" src="{{ 'script-main.js' | asset_url }}"></script>
+    {{ 'script-restapi.js' | asset_url | script_tag }}
   </body>
 </html>

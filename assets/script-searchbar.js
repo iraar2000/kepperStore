@@ -7,12 +7,11 @@ export async function filterProducts(fetched_products, productName) {
 export function insertCategory(categories) {
     const searchbar_category = document.querySelector('.searchbar .dropdown');
     const category_content = searchbar_category.querySelector(".dropdown-content");
-
     if (!categories && categories.length == 0) return;
 
     // loop and create the appendable category elements
     let itemsStructure = "<div class='dropdown-item' data-value='All'>All Category</div>";
-    categories.collections.forEach(category => {
+    categories.forEach(category => {
         itemsStructure += "<div class='dropdown-item' data-value='" + category.title + "'>" + category.title + "</div>"
     });
     category_content.innerHTML = itemsStructure;
