@@ -2,10 +2,10 @@
   <div class="dropdown-title btn btn-secondary btn-{{ size }}">
     <p style="margin:0;">{{ title }}</p>
     <span class="dropdown-icon">
-      {% render 'down-icon', width: 11, height: 11 %}
+      {{ 'icon-down.svg' | inline_asset_content }}
     </span>
     <span class="up-arrow-icon">
-      {% render 'up-icon', width: 11, height: 11 %}
+      {{ 'icon-down.svg' | inline_asset_content }}
     </span>
   </div>
 

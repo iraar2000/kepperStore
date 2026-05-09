@@ -1,0 +1,26 @@
+{
+    "sections": {
+        "topMenu": {
+            "type": "topMenu"
+        },
+        "mainMenu": {
+            "type": "mainMenu"
+        },
+        "bottomMenu": {
+            "type": "bottomMenu"
+        },
+        "productDetails": {
+            "type": "productDetails"
+        },
+        "footer": {
+            "type": "footer"
+        }
+    },
+    "order": [
+        "topMenu",
+        "mainMenu",
+        "bottomMenu",
+        "productDetails",
+        "footer"
+    ]
+}

@@ -1,0 +1,64 @@
+{% layout none %}
+
+{ "id": {{ collection.id | json }},
+
+"title": {{ collection.title | json }},
+
+"handle": {{ collection.handle | json }},
+
+"type": {{ collection.metafields.custom.type | json }},
+
+"products_count": {{ collection.all_products_count | json }},
+
+"advertisment":
+{% if collection.metafields.custom.advertisment.value %}
+  {% assign ad = collection.metafields.custom.advertisment.value %}
+  { "title": {{ ad.title | json }}, "description": {{ ad.descriptions | json }}, "image":
+  {% if ad.image != blank %} {{ ad.image | image_url: width: 300 | json }} {% else %} null {% endif %} },
+{% else %}
+  null,
+{% endif -%}
+
+"image":
+{% if collection.image %}
+  { "id": {{ collection.image.id | json }}, "asp": {{ collection.image.aspect_ratio | json }}, "src":
+  {{ collection.image | image_url: width: 300 | json }}
+  },
+{% else %}
+  null,
+{% endif -%}
+
+"products":
+{% if collection.metafields.custom.parent_collection.value %}
+  [],
+{% else %}
+  [
+  {% for prod in collection.products %}
+    {{ prod.handle | json }}
+    {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ],
+{% endif %}
+
+"parent":
+{% if collection.metafields.custom.parent_collection.value %}
+  { "id": {{ collection.metafields.custom.parent_collection.value.id | json }}, "title":
+  {{ collection.metafields.custom.parent_collection.value.title | json }}, "handle":
+  {{ collection.metafields.custom.parent_collection.value.handle | json }}
+  },
+{% else %}
+  null,
+{% endif %}
+
+"subcollections":
+{% if collection.metafields.custom.sub_collection.value %}
+  [
+  {% for sub_collection in collection.metafields.custom.sub_collection.value %}
+    {{ sub_collection.handle | json }}
+    {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+{% else %}
+  []
+{% endif %}
+}

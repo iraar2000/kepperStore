@@ -1,0 +1,37 @@
+<div class="details-container">
+  <div class="main-container">
+    <!-- main details container -->
+    <div class="productDetails-container">
+      <div class="productDetails-imageContainer">
+        <div class="image-container">
+          <div class="productDetails-topImageInfo state-container">
+            <div class="stockState-btn"></div>
+            <div class="favorite">
+              {{ 'icon-favorite1.svg' | inline_asset_content }}
+            </div>
+          </div>
+        </div>
+        <div class="product-images"></div>
+      </div>
+      <div class="productDetails-infoContainer"></div>
+      <div class="productDetails-actionsContainer">
+        <div class="cart-checkout-section action-container"></div>
+        <div class="quick-order-section action-container"></div>
+      </div>
+    </div>
+
+    <!-- product reviews container -->
+    {% comment %}
+      <div class="productDetails-reviewsContainer">
+        <div class="review-title">
+          <p class="title">REVIEWS</p>
+          <p class="reviews-nbr"></p>
+        </div>
+        <div class="review-contents"></div>
+      </div>
+    {% endcomment %}
+
+    <!-- product similar container -->
+    <div class="productDetails-similarContainer"></div>
+  </div>
+</div>

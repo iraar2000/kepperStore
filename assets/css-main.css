@@ -1,6 +1,5 @@
 /* settings css */
 @import "./css-reset.css";
-@import "./css-global.css";
 
 /* components css */
 @import "./css-component-buttons.css";
@@ -14,3 +13,7 @@
 
 /* content css */
 @import "./css-home-content.css";
+@import "./css-productListing-layout.css";
+@import "./css-productDetails.css";
+@import "./css-global.css";
+@import "./css-shopCart.css"; /* global css */

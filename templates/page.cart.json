@@ -9,6 +9,9 @@
         "bottomMenu": {
             "type": "bottomMenu"
         },
+        "shopCart": {
+            "type": "shoppingCart"
+        },
         "footer": {
             "type": "footer"
         }
@@ -17,6 +20,7 @@
         "topMenu",
         "mainMenu",
         "bottomMenu",
+        "shopCart",
         "footer"
     ]
 }

@@ -84,6 +84,12 @@
                 "id": "darkgray_color",
                 "label": "DarkGray Color",
                 "default": "#666666"
+            },
+            {
+                "type": "color",
+                "id": "danger_color",
+                "label": "Danger Color",
+                "default": "#f1352b"
             }
         ]
     }

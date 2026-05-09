@@ -1,0 +1,73 @@
+{% layout none %}
+
+{% assign now_ts = 'now' | date: '%s' %}
+{% assign published_ts = product.published_at | date: '%s' %}
+{% assign diff_seconds = now_ts | minus: published_ts %}
+
+{% comment %} price assigning {% endcomment %}
+{% assign current_price = product.price | divided_by: 100 | json %}
+{% assign previous_price = product.compare_at_price | divided_by: 100 | json %}
+{% if product.metafields.custom.discount != 0 %}
+  {% assign discount = current_price | times: product.metafields.custom.discount | divided_by: 100 %}
+  {% assign previous_price = current_price %}
+  {% assign current_price = current_price | minus: discount %}
+{% endif %}
+
+{% comment %} clean description (remove <p> tags) {% endcomment %}
+{% assign clean_description = product.description | replace: '<p>', '' | replace: '</p>', '' %}
+
+{ "id": {{ product.id | json }},
+
+"variantId":
+{% if product.selected_or_first_available_variant %}
+  {{ product.selected_or_first_available_variant.id | json }}
+{% else %}
+  null
+{% endif -%}
+,
+
+"title": {{ product.title | json }},
+
+"image": {{ product.featured_image | image_url: width: 400 | json }},
+
+"descriptions" : {{ clean_description | json }},
+
+"handle": {{ product.handle | json }},
+
+"currentPrice": {{ current_price | json }},
+
+"previousPrice": {{ previous_price | json }},
+
+"discount": {{ product.metafields.custom.discount | json }},
+
+"quantity":
+{% if product.selected_or_first_available_variant %}
+  {{ product.selected_or_first_available_variant.inventory_quantity | json }},
+{% else %}
+  0,
+{% endif %}
+
+"characteristics": {{ product.metafields.custom.characteristics.value | json }},
+
+"stock_days": {{ diff_seconds | divided_by: 86400 | floor | json }},
+
+"belongTo":
+{% if product.metafields.custom.parent_collection.value %}
+  { "title": {{ product.metafields.custom.parent_collection.value.title | json }}, "type":
+  {{ product.metafields.custom.parent_collection.value.type | json }}, "handle":
+  {{ product.metafields.custom.parent_collection.value.handle | json }}
+  },
+{% else %}
+  null,
+{% endif %}
+
+"subcollections":
+{% if product.metafields.custom.sub_collection.value %}
+  { "title": {{ product.metafields.custom.sub_collection.value.title | json }}, "type":
+  {{ product.metafields.custom.sub_collection.value.type | json }}, "handle":
+  {{ product.metafields.custom.sub_collection.value.handle | json }}
+  }
+{% else %}
+  null
+{% endif -%}
+}

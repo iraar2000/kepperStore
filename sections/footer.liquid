@@ -12,29 +12,29 @@
         <div class="store-info-container">
           <div data-name="location" class="store-info">
             <div class="info-icon btn btn-secondary btn-sm">
-              {% render 'location-icon' %}
+              {{ 'icon-location.svg' | inline_asset_content }}
             </div>
             <p>Kigali, str 244, kiyovu, car-free zone</p>
           </div>
           <div data-name="email" class="store-info">
             <div class="info-icon btn btn-secondary btn-sm">
-              {% render 'email-icon' %}
+              {{ 'icon-email.svg' | inline_asset_content }}
             </div>
             <p>Keppertechmart@gmail.com</p>
           </div>
         </div>
         <div class="social-media-links">
           <button data-name="facebook" class="socialmedia-btn btn-shadow">
-            {% render 'facebook-icon' %}
+            {{ 'icon-facebook.svg' | inline_asset_content }}
           </button>
           <button data-name="whatsapp" class="socialmedia-btn btn-shadow">
-            {% render 'whatsapp-icon' %}
+            {{ 'icon-whatsapp.svg' | inline_asset_content }}
           </button>
           <button data-name="instagram" class="socialmedia-btn btn-shadow">
-            {% render 'instagram-icon' %}
+            {{ 'icon-instagram.svg' | inline_asset_content }}
           </button>
           <button data-name="youtube" class="socialmedia-btn btn-shadow">
-            {% render 'youtube-icon' %}
+            {{ 'icon-youtube.svg' | inline_asset_content }}
           </button>
         </div>
         <div class="site-setting"></div>
@@ -43,7 +43,7 @@
       {% comment %} contains all the navigation urls to website pages  {% endcomment %}
       <div class="store-navigation">
         <div class="navigators">
-          <div class="top-category navigator-container">
+          <div class="top-collection navigator-container">
             <p class="navigator-title">TOP CATEGORIES</p>
             <nav class="navigator-list">
               <a>Laptops</a>

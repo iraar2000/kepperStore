@@ -4,15 +4,15 @@ export async function filterProducts(fetched_products, productName) {
 }
 
 // the function which the available categories
-export function insertCategory(categories) {
-    const searchbar_category = document.querySelector('.searchbar .dropdown');
-    const category_content = searchbar_category.querySelector(".dropdown-content");
+export function insertCollection(categories) {
+    const searchbar_collection = document.querySelector('.searchbar .dropdown');
+    const collection_content = searchbar_collection.querySelector(".dropdown-content");
     if (!categories && categories.length == 0) return;
 
-    // loop and create the appendable category elements
-    let itemsStructure = "<div class='dropdown-item' data-value='All'>All Category</div>";
-    categories.forEach(category => {
-        itemsStructure += "<div class='dropdown-item' data-value='" + category.title + "'>" + category.title + "</div>"
+    // loop and create the appendable collection elements
+    let itemsStructure = "<div class='dropdown-item' data-value='All'>All Collection</div>";
+    categories.forEach(collection => {
+        itemsStructure += "<div class='dropdown-item' data-value='" + collection.title + "'>" + collection.title + "</div>"
     });
-    category_content.innerHTML = itemsStructure;
+    collection_content.innerHTML = itemsStructure;
 }

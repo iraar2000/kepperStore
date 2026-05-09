@@ -3,7 +3,7 @@
   background-color: transparent;
   width: 100%;
   margin-top: 8px;
-  padding: 0 12px;
+  padding: 0 24px;
   overflow: hidden;
 }
 
@@ -15,7 +15,7 @@
   height: 400px;
 }
 
-.hero-section .categoryList-container {
+.hero-section .collectionList-container {
   height: 100%;
   width: 350px;
   background-color: var(--primary-color);
@@ -28,26 +28,26 @@
   box-sizing: border-box;
 }
 
-.categoryList-container .title {
+.collectionList-container .title {
   padding: 15px 0;
   margin: 0 0 15px 0;
   border-bottom: 1px solid var(--gray-color);
 }
 
-.categoryList-container .title p {
+.collectionList-container .title p {
   font-weight: var(--font-weight-bold);
   font-size: 24px;
   font-family: "Quicksand";
 }
 
-.category-content {
+.collection-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.category-content .category-item {
+.collection-content .collection-item {
   display: flex;
   flex-direction: row;
   padding: 10px 18px;
@@ -55,13 +55,13 @@
   align-items: center;
 }
 
-.category-content .category-item p {
+.collection-content .collection-item p {
   flex: 1;
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-bold);
 }
 
-.category-content .category-item .category-quantity {
+.collection-content .collection-item .collection-quantity {
   background-color: var(--accent-color);
   width: 24px;
   height: 24px;
@@ -73,7 +73,7 @@
   justify-content: center;
 }
 
-.category-item .category-quantity p {
+.collection-item .collection-quantity p {
   all: unset;
   font-size: var(--font-size-small);
 }
@@ -122,4 +122,10 @@
 .home-page {
   height: fit-content;
   width: 100%;
+}
+
+.home-page .content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

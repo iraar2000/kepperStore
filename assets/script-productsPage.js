@@ -2,6 +2,6 @@
 const params = new URLSearchParams(window.location.search);
 const type = params.get('type');
 const product = params.get('product');
-const categories = params.get('category');
+const collections = params.get('collection');
 
-console.log(type, product, categories)
+console.log(type, product, collections)

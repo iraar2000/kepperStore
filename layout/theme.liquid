@@ -7,6 +7,7 @@
     --accent-color: {{ settings.accent_color }};
     --gray-color: {{ settings.gray_color }};
     --darkgray-color: {{ settings.darkgray_color }};
+    --danger-color: {{ settings.danger_color }}
   }
   {% comment %} font size and weight variables {% endcomment %}
   :root {
@@ -16,6 +17,7 @@
     --font-size-xlarge: 18px;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
   }
 </style>
@@ -28,6 +30,7 @@
     {{ 'css-main.css' | asset_url | stylesheet_tag }}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
@@ -50,15 +53,31 @@
     {% render 'group-container' %}
 
     {% comment %} product item template {% endcomment %}
+    {% render 'product-card' %}
 
+    {% comment %} navigation menu template {% endcomment %}
+    {% render 'navigation-container' %}
     <script>
       {% comment %} icon variable {% endcomment %}
       const icons = {
-        camera: "{{ 'image-camera-icon.svg' | asset_url }}",
-        'shoes-clothes': "{{ 'image-shoesclothes-icon.svg' | asset_url }}",
-        'laptop-pc': "{{ 'image-pc-icon.svg' | asset_url }}",
-        'phones-tables': "{{ 'image-tablet-icon.svg' | asset_url }}",
-        rentals: "{{ 'image-rental-icon.svg' | asset_url }}",
+        cameras: "{{ 'icon-camera.svg' | asset_url }}",
+        'clothes-shoes': "{{ 'icon-shoesclothes.svg' | asset_url }}",
+        'laptops-pc': "{{ 'icon-pc.svg' | asset_url }}",
+        'phones-tablets': "{{ 'icon-tablet.svg' | asset_url }}",
+        accessories: "{{ 'icon-accessories.svg' | asset_url }}",
+        rentals: "{{ 'icon-rental.svg' | asset_url }}",
+        instock: "{{ 'icon-instock.svg' | asset_url}}",
+        contact: "{{ 'icon-contact.svg' | asset_url }}",
+        youtube: "{{ 'icon-youtube.svg' | asset_url }}",
+        whatsapp: "{{ 'icon-whatsapp.svg' | asset_url }}",
+        facebook: "{{ 'icon-facebook.svg' | asset_url }}",
+        email: "{{ 'icon-email.svg' | asset_url }}",
+        instagram: "{{ 'icon-instagram.svg' | asset_url }}",
+        upArrow: "{{ 'icon-up.svg' | asset_url }}",
+        user: "{{ 'icon-user.svg' | asset_url }}",
+        shipping: "{{ 'icon-shipping.svg' | asset_url }}",
+        location: "{{ 'icon-location.svg' | asset_url }}",
+        cart: "{{ 'icon-cart.svg' | asset_url }}"
       };
 
       {% comment %} images to use variable is defined {% endcomment %}
@@ -74,52 +93,18 @@
         instagram: '{{ settings.instagram_account }}',
       };
 
-      {% comment %} the function retrieves the collections stored in shopify and their data {% endcomment %}
-      function getCollectionsJson() {
-
-        const collectionsData = [
-          {% for coll in collections %}
-            {
-              id: {{ coll.id }},
-              title: "{{ coll.title | escape }}",
-              handle: "{{ coll.handle | escape }}",
-              type: "{{ coll.metafields.custom.collection_type | escape }}",
-              products_count: {{ coll.products_count }},
-              image: {
-                  id: {{ coll.image.id }},
-                  asp: {{ coll.image.aspect_ratio }},
-                  src: "{{ coll.image | image_url: width: 300}}"
-              },
-              parent: {% if coll.metafields.custom.parent.value %}
-                {
-                  id: {{ coll.metafields.custom.parent.value.id }},
-                  title: "{{ coll.metafields.custom.parent.value.title }}",
-                  handle: "{{ coll.metafields.custom.parent.value.handle }}"
-                }
-              {% else %}
-                null
-              {% endif %},
-              subcategories: {% if coll.metafields.custom.sub_collections.value %}
-                [
-                {% for sub_coll in coll.metafields.custom.sub_collections.value %}
-                  {
-                    id: {{ sub_coll.id }},
-                    title: "{{ sub_coll.title }}",
-                    handle: "{{ sub_coll.handle }}"
-                  }{% unless forloop.last %},{% endunless %}
-                {% endfor %}
-                ]
-              {% else %}
-                []
-              {% endif %}
-            }{% unless forloop.last %},{% endunless %}
-          {% endfor %}
-        ];
-        return collectionsData;
-      }
+      {% comment %} retrieving all collections in shopify {% endcomment %}
+      const collectionList = [
+        {% for coll in collections %}
+          {
+            title: {{ coll.title | json}},
+            handle: {{ coll.handle | json }},
+            type: {{ coll.metafields.custom.type | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
     </script>
     {{ 'script-definitions.js' | asset_url | script_tag }}
     <script type="module" src="{{ 'script-main.js' | asset_url }}"></script>
-    {{ 'script-restapi.js' | asset_url | script_tag }}
   </body>
 </html>

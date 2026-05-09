@@ -39,7 +39,7 @@
                 <a
                   href="
                     {% if menu == "home" %} /
-                    {% elsif menu == "products" %} /pages/products
+                    {% elsif menu == "products" %} /pages/products?collection=All
                     {% elsif menu == "contact" %} /pages/contact
                     {% else %} /
                     {% endif %}
@@ -58,26 +58,27 @@
     {% comment %} pages navigator section {% endcomment %}
     <div class="page-navs">
       {% comment %} favorite button {% endcomment %}
-      {% capture favorite_icon %}{% render 'favorite-icon'%}{% endcapture %}
-      {% render 'wishlistCard', path: '/pages/favorites', icon: favorite_icon %}
+      {% render 'wishlistCard', className:"favorite-wishlist-card" path: '/pages/favorites', icon: 'icon-favorite2.svg' | asset_url %}
 
       {% comment %} account page setting {% endcomment %}
-      {% capture user_icon %}{% render 'user-icon'%}{% endcapture %}
-      {% render 'wishlistCard',
-        path: '/pages/accounts',
-        icon: user_icon,
+      {%
+        render 'wishlistCard',
+        path: '/pages/account',
+        className: "account-wishlist-card",
+        icon: 'icon-user.svg' | asset_url,
         description_ttl: 'WELCOME',
         description: 'LOGIN/REGISTER'
       %}
 
       {% comment %} cart navigatior {% endcomment %}
-      {% capture cart_icon %}{% render 'cart-icon'%}{% endcapture %}
-      {% render 'wishlistCard',
+      {%
+        render 'wishlistCard',
         path: '/pages/cart',
-        icon: cart_icon,
+        className: "cart-wishlist-card",
+        icon: 'icon-cart.svg' | asset_url,
         description_ttl: 'CART',
-        description: 'RW100,00',
-        popup_info: '5'
+        description: 'RW 0.0',
+        popup_info: 0
       %}
     </div>
   </div>

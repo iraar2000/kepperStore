@@ -1,9 +1,9 @@
-<div class="wishlist-container {% if request.path contains path %} active {% endif %}">
+<div class="wishlist-container {{ className }} {% if request.path contains path %} active {% endif %}">
   <a href="{{ path }}">
     <div class="wishlist-iconContainer">
       {% if icon %}
         <div class="wishlist-icon">
-          {{ icon }}
+          {{ icon | inline_asset_content }}
         </div>
       {% endif %}
       {% if popup_info %}

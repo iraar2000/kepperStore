@@ -9,6 +9,9 @@
         "bottomMenu": {
             "type": "bottomMenu"
         },
+        "productListing": {
+            "type": "productListing"
+        },
         "footer": {
             "type": "footer"
         }
@@ -17,6 +20,7 @@
         "topMenu",
         "mainMenu",
         "bottomMenu",
+        "productListing",
         "footer"
     ]
 }

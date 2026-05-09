@@ -1,4 +1,6 @@
+export function dropdownLayout(icons) {
 
+}
 
 // this function handles the action performed on the dropdown
 export function dropdownHandler(dropdowns) {
