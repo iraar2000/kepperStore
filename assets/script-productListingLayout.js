@@ -1,3 +1,4 @@
+
 // the function which handles the product display checkboxes
 function checkBoxHandler(checkBoxList) {
     checkBoxList.forEach(checkbox => {
@@ -26,13 +27,8 @@ export function categoryDisplayer(productData, categoryData, icons, handle) {
     item.querySelector('.check-image div').classList.toggle("checked")
 
     categoryData.forEach(category => {
-        if (category?.parent?.handle == handle) {
-            const categItem = new checkBox("categProp-item");
-            categListing.appendChild(categItem.renderTitle(category.title));
-        } else if (handle == "all") {
-            const categItem = new checkBox("categProp-item");
-            categListing.appendChild(categItem.renderTitle(category.title));
-        }
+        const categItem = new checkBox("categProp-item");
+        categListing.appendChild(categItem.renderTitle(category.title));
     });
 
     // handling the check box selection
@@ -173,22 +169,19 @@ async function propertySettingHandler(propListing, productData, icons) {
 }
 
 export function main(productData, categoryData, iconData, handle) {
-    // console.log("product listing layout data: ", productData, categoryData, iconData, handle);
-
 
     categoryDisplayer(productData, categoryData, iconData, handle);
     propertyDisplayer(productData, iconData, handle);
 
-    const displayData = productData.filter(product => {
-        if (product?.belongTo?.handle == handle) return product;
-        else if (handle == "all") return product;
-    });
-
-    console.log("display data: ", displayData);
-
     // initialize product data
-    const displayer = new productDisplayer(filterSettings, displayData);
+    const displayer = new productDisplayer(filterSettings, productData);
     displayer.productDisplay(iconData);
+
+    const loadingContainer = document.querySelector(".loading-container");
+    const mainContainer = document.querySelector(".main-container");
+
+    loadingContainer.style.display = "none";
+    mainContainer.style.display = "flex";
 
     const categProp = document.querySelector(".main-container .categProp-wrapper .categProp-container");
     const main = document.querySelector(".main-container");

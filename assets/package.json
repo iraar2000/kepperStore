@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "spin": "^0.0.1",
+    "spinjs": "^0.4.193"
+  }
+}

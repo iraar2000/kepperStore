@@ -11,7 +11,7 @@ export async function productMainCollectionInitializer(collectionList) {
     // creating main collection items
     collectionData.forEach(collection => {
         if (collection.type === "main") {
-            let collectionItem = "<div class='collection-item btn-shadow'>\n";
+            let collectionItem = `<div data-handle="${collection.handle}" class='collection-item btn-shadow'>\n`;
             // collection icon image
             const icon = icons[collection.handle];
             if (icon) collectionItem += `<img src="${icon}" class="collection-icon">\n`;
@@ -33,9 +33,20 @@ export async function productMainCollectionInitializer(collectionList) {
     // assign new content of the collection designed
     if (!collectionItems) return;
     collectionContent.innerHTML = collectionItems;
+
+    // add click event listener to the collection items
+    const collectionItemElements = document.querySelectorAll('.collection-content  .collection-item');
+    collectionItemElements.forEach(item => {
+        console.log("adding click listener to collection item with handle: " + item.dataset.handle);
+        item.addEventListener('click', () => {
+            const handle = item.dataset.handle;
+            window.location.href = "/pages/products?type=collection&collection=" + handle;
+            console.log("clicked collection with handle: " + handle);
+        });
+    });
 }
 
-// main function runner 
+// main function runner
 export async function main(collectionList, icons) {
     // initializing the collection card
     const group = "phones-tablets";
@@ -94,8 +105,8 @@ async function groupDisplayer(name, addData, collectionData, prodData, icons) {
 
     // the collection data by group name creation
     collectionData.forEach(collection => {
-        if (!collection.parent.handle) return;
-        if (collection.parent.handle.toLowerCase() == name.toLowerCase()) categByName.push(collection)
+        if (!collection?.parent?.handle) return;
+        if (collection?.parent?.handle.toLowerCase() == name.toLowerCase()) categByName.push(collection)
     })
 
     const group = new groupDisplay(name);

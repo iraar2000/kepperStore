@@ -1,29 +1,35 @@
-<div class="main-container">
-  <div class="categProp-wrapper">
-    <div class="categProp-container">
-      <!-- categories selection section -->
-      <div class="categProp-card category">
-        <div class="categProp-listing">
-          <p class="categProp-title">CATEGORIES</p>
-          <div class="selected-listing"></div>
-        </div>
-        <div class="category-listing categProp-listing">
-          <p class="categProp-SubTitle categProp-topSubtitle"></p>
-          <div class="categProp-list"></div>
-        </div>
-      </div>
+<div class="productlisting-container">
+  {% comment %} the container which appears while loading is in progress {% endcomment %}
+  <div class="loading-container" style="display: block; height: 400px; width: 100vw;"></div>
 
-      <!-- properties filtering section -->
-      <div class="categProp-card properties">
-        <div class="properties-setting categProp-listing">
-          <P class="categProp-title">PROPERTIES</P>
-          <div class="setting-list"></div>
+  {% comment %} the main container which holds the categories and products {% endcomment %}
+  <div class="main-container" style="display: none">
+    <div class="categProp-wrapper">
+      <div class="categProp-container">
+        <!-- categories selection section -->
+        <div class="categProp-card category">
+          <div class="categProp-listing">
+            <p class="categProp-title">CATEGORIES</p>
+            <div class="selected-listing"></div>
+          </div>
+          <div class="category-listing categProp-listing">
+            <p class="categProp-SubTitle categProp-topSubtitle"></p>
+            <div class="categProp-list"></div>
+          </div>
         </div>
-        <div class="property-listing"></div>
+
+        <!-- properties filtering section -->
+        <div class="categProp-card properties">
+          <div class="properties-setting categProp-listing">
+            <P class="categProp-title">PROPERTIES</P>
+            <div class="setting-list"></div>
+          </div>
+          <div class="property-listing"></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- product listing container -->
-  <div class="product-container"></div>
+    <!-- product listing container -->
+    <div class="product-container"></div>
+  </div>
 </div>

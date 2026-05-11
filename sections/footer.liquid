@@ -1,99 +1,103 @@
 {% comment %} this is the footer of all pages {% endcomment %}
-<div class="footer">
-  <div class="footer-container">
-    <div class="footer-content">
-      {% comment %} contails the presetation details of the section {% endcomment %}
-      <div class="store-presentation">
-        <p class="store-title">Kepper RW TECH online market</p>
-        <div class="hotline-container">
-          <div class="hotline-btn btn btn-secondary btn-sm">hotline 24/7</div>
-          <p class="store-hotline">+250788647837</p>
-        </div>
-        <div class="store-info-container">
-          <div data-name="location" class="store-info">
-            <div class="info-icon btn btn-secondary btn-sm">
-              {{ 'icon-location.svg' | inline_asset_content }}
-            </div>
-            <p>Kigali, str 244, kiyovu, car-free zone</p>
+<div class="body-container">
+  <div class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        {% comment %} contails the presetation details of the section {% endcomment %}
+        <div class="store-presentation">
+          <p class="store-title">Kepper RW TECH online market</p>
+          <div class="hotline-container">
+            <div class="hotline-btn btn btn-secondary btn-sm">hotline 24/7</div>
+            <p class="store-hotline">+250788647837</p>
           </div>
-          <div data-name="email" class="store-info">
-            <div class="info-icon btn btn-secondary btn-sm">
-              {{ 'icon-email.svg' | inline_asset_content }}
+          <div class="store-info-container">
+            <div class="container-positioner">
+              <div data-name="location" class="store-info">
+                <div class="info-icon btn btn-secondary btn-sm">
+                  {{ 'icon-location.svg' | inline_asset_content }}
+                </div>
+                <p>Kigali, str 244, kiyovu, car-free zone</p>
+              </div>
+              <div data-name="email" class="store-info">
+                <div class="info-icon btn btn-secondary btn-sm">
+                  {{ 'icon-email.svg' | inline_asset_content }}
+                </div>
+                <p>Keppertechmart@gmail.com</p>
+              </div>
             </div>
-            <p>Keppertechmart@gmail.com</p>
           </div>
+          <div class="social-media-links">
+            <button data-name="facebook" class="socialmedia-btn btn-shadow">
+              {{ 'icon-facebook.svg' | inline_asset_content }}
+            </button>
+            <button data-name="whatsapp" class="socialmedia-btn btn-shadow">
+              {{ 'icon-whatsapp.svg' | inline_asset_content }}
+            </button>
+            <button data-name="instagram" class="socialmedia-btn btn-shadow">
+              {{ 'icon-instagram.svg' | inline_asset_content }}
+            </button>
+            <button data-name="youtube" class="socialmedia-btn btn-shadow">
+              {{ 'icon-youtube.svg' | inline_asset_content }}
+            </button>
+          </div>
+          <div class="site-setting"></div>
         </div>
-        <div class="social-media-links">
-          <button data-name="facebook" class="socialmedia-btn btn-shadow">
-            {{ 'icon-facebook.svg' | inline_asset_content }}
-          </button>
-          <button data-name="whatsapp" class="socialmedia-btn btn-shadow">
-            {{ 'icon-whatsapp.svg' | inline_asset_content }}
-          </button>
-          <button data-name="instagram" class="socialmedia-btn btn-shadow">
-            {{ 'icon-instagram.svg' | inline_asset_content }}
-          </button>
-          <button data-name="youtube" class="socialmedia-btn btn-shadow">
-            {{ 'icon-youtube.svg' | inline_asset_content }}
-          </button>
-        </div>
-        <div class="site-setting"></div>
-      </div>
 
-      {% comment %} contains all the navigation urls to website pages  {% endcomment %}
-      <div class="store-navigation">
-        <div class="navigators">
-          <div class="top-collection navigator-container">
-            <p class="navigator-title">TOP CATEGORIES</p>
-            <nav class="navigator-list">
-              <a>Laptops</a>
-              <a>PC & Computers</a>
-              <a>Cell Phones</a>
-              <a>Tablets</a>
-              <a>Gaming & VR</a>
-              <a>networks</a>
-              <a>Cameras</a>
-              <a>Sounds</a>
-              <a>Office</a>
-            </nav>
-          </div>
-          <div class="company navigator-container">
-            <p class="navigator-title">COMPANY</p>
-            <nav class="navigator-list">
-              <a>About</a>
-              <a>Contact</a>
-              <a>Career</a>
-              <a>Blog</a>
-              <a>Sitemap</a>
-              <a>Store Locations</a>
-            </nav>
-          </div>
-          <div class="help-center navigator-container">
-            <p class="navigator-title">HELP CENTER</p>
-            <nav class="navigator-list">
-              <a>Customer Service</a>
-              <a>Policy</a>
-              <a>Terms & Conditions</a>
-              <a>FAQs</a>
-              <a>My Account</a>
-              <a>Product Support</a>
-            </nav>
-          </div>
-          <div class="partner navigator-container">
-            <p class="navigator-title">PARTNER</p>
-            <nav class="navigator-list">
-              <a>Become Seller</a>
-              <a>Advertise</a>
-            </nav>
+        {% comment %} contains all the navigation urls to website pages  {% endcomment %}
+        <div class="store-navigation">
+          <div class="navigators">
+            <div class="top-collection navigator-container">
+              <p class="navigator-title">TOP CATEGORIES</p>
+              <nav class="navigator-list">
+                <a>Laptops</a>
+                <a>PC & Computers</a>
+                <a>Cell Phones</a>
+                <a>Tablets</a>
+                <a>Gaming & VR</a>
+                <a>networks</a>
+                <a>Cameras</a>
+                <a>Sounds</a>
+                <a>Office</a>
+              </nav>
+            </div>
+            <div class="company navigator-container">
+              <p class="navigator-title">COMPANY</p>
+              <nav class="navigator-list">
+                <a>About</a>
+                <a>Contact</a>
+                <a>Career</a>
+                <a>Blog</a>
+                <a>Sitemap</a>
+                <a>Store Locations</a>
+              </nav>
+            </div>
+            <div class="help-center navigator-container">
+              <p class="navigator-title">HELP CENTER</p>
+              <nav class="navigator-list">
+                <a>Customer Service</a>
+                <a>Policy</a>
+                <a>Terms & Conditions</a>
+                <a>FAQs</a>
+                <a>My Account</a>
+                <a>Product Support</a>
+              </nav>
+            </div>
+            <div class="partner navigator-container">
+              <p class="navigator-title">PARTNER</p>
+              <nav class="navigator-list">
+                <a>Become Seller</a>
+                <a>Advertise</a>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-copyright">
-      <p>
-        @{{ 'now' | date: '%Y' }}
-        {{ settings.store_name }}. All Rights Reserved
-      </p>
+      <div class="footer-copyright">
+        <p>
+          @{{ 'now' | date: '%Y' }}
+          {{ settings.store_name }}. All Rights Reserved
+        </p>
+      </div>
     </div>
   </div>
 </div>

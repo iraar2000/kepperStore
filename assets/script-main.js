@@ -31,11 +31,13 @@ async function productListingLayoutHandler() {
     const params = new URLSearchParams(window.location.search);
     const handle = params.get('collection').toLowerCase().replace(" & ", "-");
 
+    const spinningContainer = document.querySelector('.loading-container');
+
     if (handle != "all" && handle != "search") {
         // here we get the product by collection card clicking
         const coll = await api.getCollectionByHandel(handle);
-        const subCollectionData = await Promise.all(coll.subcollections.map(subCollHandle => api.getCollectionByHandel(subCollHandle)))
-        const productData = await Promise.all(coll.products.map(prodHandle => api.getProductByHandle(prodHandle)))
+        const subCollectionData = await Promise.all(coll.subcollections.map(subCollHandle => api.getCollectionByHandel(subCollHandle)));
+        const productData = await Promise.all(coll.products.map(prodHandle => api.getProductByHandle(prodHandle)));
         prodListingLayout.main(productData, subCollectionData, icons, handle);
     } else if (handle == "all") {
         //here we get all the products listed in the store
